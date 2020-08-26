@@ -44,6 +44,7 @@ var (
 			"MetaSr",
 			"TaoBrowser",
 			"PlayStation",
+			"PLAYSTATION",
 			"Opera",
 			"FBAN",
 			"FB_IAB",
@@ -143,7 +144,7 @@ var (
 
 	maxthon = &itemSpec{
 		name:            "Maxthon",
-		mustContains:    []string{"Maxthon"},
+		mustContains:    []string{"Maxthon", "MAXTHON"},
 		mustNotContains: []string{},
 		versionSplitters: [][]string{
 			[]string{"Maxthon/", " "},
@@ -153,7 +154,7 @@ var (
 
 	playstation = &itemSpec{
 		name:         "PlayStation",
-		mustContains: []string{"PlayStation"},
+		mustContains: []string{"PlayStation", "PLAYSTATION"},
 		versionSplitters: [][]string{
 			[]string{"PLAYSTATION 3", ")"},
 			[]string{"PlayStation 4", ""},
@@ -170,7 +171,7 @@ var (
 
 	facebook = &itemSpec{
 		name: "Facebook",
-		mustContains: []string{"FB_IAB", "FBAN"},
+		mustContains: []string{"FB_IAB", "FBAN", "FBAN/FBIOS"},
 		versionSplitters: [][]string{
 			[]string{"FBAV/", ";"},
 		},
@@ -197,6 +198,7 @@ var (
 			"MetaSr",
 			"TaoBrowser",
 			"PlayStation",
+			"PLAYSTATION",
 			"Opera",
 			"FBAN",
 			"FB_IAB",

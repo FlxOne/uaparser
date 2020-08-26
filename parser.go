@@ -35,7 +35,7 @@ func isEmptyString(str string) bool {
 
 func contains(ua string, tokens []string) bool {
 	for _, tk := range tokens {
-		if strings.Contains(ua, strings.ToLower(tk)) {
+		if strings.Contains(ua, tk) {
 			return true
 		}
 	}
@@ -55,11 +55,9 @@ func matchSpec(ua string, spec *itemSpec) (info *InfoItem, ok bool) {
 	ok = true
 
 	for _, splitter := range spec.versionSplitters {
-		split := strings.ToLower(splitter[0])
-
-		if strings.Contains(ua, split) {
-			if rmLeft := strings.Split(ua, split)[1]; strings.Contains(rmLeft, split) || isEmptyString(split) {
-				rmRight := strings.Split(rmLeft, split)[0]
+		if strings.Contains(ua, splitter[0]) {
+			if rmLeft := strings.Split(ua, splitter[0])[1]; strings.Contains(rmLeft, splitter[1]) || isEmptyString(splitter[1]) {
+				rmRight := strings.Split(rmLeft, splitter[1])[0]
 				info.Version = strings.TrimSpace(rmRight)
 				break
 			}
@@ -81,12 +79,10 @@ func searchIn(ua string, specs []*itemSpec) (info *InfoItem) {
 func Parse(ua string) (info *UAInfo) {
 	info = new(UAInfo)
 
-	lowerCaseUa := strings.ToLower(ua)
-
-	info.Browser = searchIn(lowerCaseUa, _BROWSERS)
-	info.Device = searchIn(lowerCaseUa, _DEVICES)
-	info.DeviceType = searchIn(lowerCaseUa, _DEVICETYPES)
-	info.OS = searchIn(lowerCaseUa, _OS)
+	info.Browser = searchIn(ua, _BROWSERS)
+	info.Device = searchIn(ua, _DEVICES)
+	info.DeviceType = searchIn(ua, _DEVICETYPES)
+	info.OS = searchIn(ua, _OS)
 
 	return
 }
