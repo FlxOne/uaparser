@@ -273,6 +273,9 @@ func GetBrowserNames() map[string][]string {
 	expectedBrowserNames["Chrome"] = []string{
 		"Mozilla/5.0 (SMART-TV; X11; Linux armv7l) AppleWebkit/537.42 (KHTML, like Gecko) Chromium/25.0.1349.2 Chrome/25.0.1349.2 Safari/537.42",
 
+		// Bug fix Chrome detected as Safari on iOS
+		"Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1",
+
 		// This is the complete list from http://www.useragentstring.com/pages/Chrome/ at 2014-11-18
 		"Mozilla/5.0/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2049.0 Safari/537.36",
 		"Mozilla/5.0/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.67 Safari/537.36",

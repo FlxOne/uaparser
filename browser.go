@@ -40,6 +40,7 @@ var (
 			"QIHU",
 			"QQBrowser",
 			"SE ",
+			"CriOS",
 			"MetaSr",
 			"TaoBrowser",
 			"PlayStation",
@@ -60,7 +61,7 @@ var (
 
 	chrome = &itemSpec{
 		name:         "Chrome",
-		mustContains: []string{"Chrome"},
+		mustContains: []string{"Chrome", "CriOS"},
 		mustNotContains: []string{
 			"CoolNovo",
 			"LBBROWSER",
@@ -77,7 +78,10 @@ var (
 			"WhatsApp",
 			"YaBrowser",
 		},
-		versionSplitters: [][]string{[]string{"Chrome/", " "}},
+		versionSplitters: [][]string{
+			[]string{"Chrome/", " "},
+			[]string{"CriOS/", " "},
+		},
 	}
 
 	edge = &itemSpec{
