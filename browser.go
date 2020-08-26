@@ -30,7 +30,7 @@ var (
 
 	safari = &itemSpec{
 		name:         "Safari",
-		mustContains: []string{"Safari", "AppleWebKit", "safari"},
+		mustContains: []string{"Safari", "AppleWebKit"},
 		mustNotContains: []string{
 			"Chrome",
 			"Chromium",
