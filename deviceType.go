@@ -4,19 +4,19 @@ var (
 	desktop = &itemSpec{
 		name:            "Desktop",
 		mustContains:    []string{"Windows", "Linux", "Mac OS X", "CrOS", "Macintosh"},
-		mustNotContains: []string{"Windows Phone", "Android", "ARM"},
+		mustNotContains: []string{"Windows Phone", "Android", "ARM;"},
 	}
 
 	tablet = &itemSpec{
 		name:         "Tablet",
-		mustContains: []string{"iPad", "Android", "ARM", "PlayBook"},
+		mustContains: []string{"iPad", "Android", "ARM;", "PlayBook"},
 		mustNotContains: []string{
 			"Mobile ",
 			"C6802", // Xperia Z Android (which is a phone) does not include Mobile in UA-string so without this is seen as a tablet
 			"Windows Phone",
 			"model/Watch",
-			"Ticwatch",
-			"TicWatch",
+			"ticwatch",
+			"linux arm",
 		},
 	}
 
@@ -29,12 +29,10 @@ var (
 			"BB10",
 			"BlackBerry",
 			"nokia",
-			"Nokia",
 		},
 		mustNotContains: []string{
 			"model/Watch",
-			"Ticwatch",
-			"TicWatch",
+			"ticwatch",
 		},
 	}
 
@@ -65,9 +63,7 @@ var (
 	watch = &itemSpec{
 		name: "Watch",
 		mustContains: []string{
-			"watchOS",
-			"Ticwatch",
-			"Watch",
+			"watch",
 		},
 	}
 
