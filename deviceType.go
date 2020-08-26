@@ -65,8 +65,7 @@ var (
 	watch = &itemSpec{
 		name: "Watch",
 		mustContains: []string{
-			"watchOS",
-			"Ticwatch",
+			"watch",
 			"Watch",
 		},
 	}
